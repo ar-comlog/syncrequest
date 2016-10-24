@@ -18,5 +18,5 @@
   },
   "author": "COMLOG Gesellschaft für Computer integrierte Logistiklösungen mbH",
   "license": "ISC",
-  "repository" : "git+http://git.speedorder.de/syncrequest.git"
+  "repository" : "https://github.com/ar-comlog/syncrequest.git"
 }
