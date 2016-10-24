@@ -1,0 +1,8 @@
+#### Legend: 
+~ change
+- remove
++ add
+
+
+#### Version 1.2.4 (2016-05-27)
+- BUG Memory leak. Streams are never closed.

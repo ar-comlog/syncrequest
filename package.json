@@ -1,0 +1,22 @@
+{
+  "name": "syncrequest",
+  "version": "1.3.0",
+  "description": "Sync extension for popular request module, Supports upload and download sync",
+  "main": "syncrequest.js",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "homepage": "http://www.comlog.org",
+  "keywords": [
+    "http",
+    "request",
+    "sync",
+    "sync upload"
+  ],
+  "dependencies": {
+    "request": ">=2.45.0"
+  },
+  "author": "COMLOG Gesellschaft für Computer integrierte Logistiklösungen mbH",
+  "license": "ISC",
+  "repository" : "git+http://git.speedorder.de/syncrequest.git"
+}
