@@ -28,7 +28,7 @@ console.info(result);
 #### getSync function:
 ```javascript
 var request = require('syncrequest');
-var result = request.sync.get('http://www.comlog.org');
+var result = request.get.sync('http://www.comlog.org');
 console.info(result);
 // {error: null, response: {..}, body: '...'}
 ```
@@ -36,7 +36,7 @@ console.info(result);
 #### postSync function:
 ```javascript
 var request = require('syncrequest');
-var result = request.sync.post('http://www.comlog.org');
+var result = request.post.sync('http://www.comlog.org');
 console.info(result);
 // {error: null, response: {...}, body: '...'}
 ```
@@ -45,7 +45,7 @@ console.info(result);
 ```javascript
 // like original request module https://github.com/request/request#forms
 var request = require('syncrequest');
-var result = request.sync.post('http://www.comlog.org', {formData: {
+var result = request.post.sync('http://www.comlog.org', {formData: {
     test: 'test',
     my_file: fs.createReadStream('index.html')
 }});
@@ -53,7 +53,7 @@ console.info(result);
 // {error: null, response: {...}, body: '...'}
 
 // OR
-var result = request.sync.post({url: 'http://www.comlog.org', formData: {
+var result = request.post.sync({url: 'http://www.comlog.org', formData: {
     test: 'test',
     my_file: fs.createReadStream('index.html')
 }});
