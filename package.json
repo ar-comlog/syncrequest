@@ -1,6 +1,6 @@
 {
   "name": "syncrequest",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Sync extension for popular request module, Supports upload and download sync",
   "main": "syncrequest.js",
   "scripts": {
