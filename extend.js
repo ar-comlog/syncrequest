@@ -42,13 +42,13 @@ module.exports = function (request) {
         return res;
     };
 
-    request.sync = function() { return _func({ cmd: 'request', arguments: arguments }); };
-    request.get.sync = request.getSync = function() { return _func({ cmd: 'get', arguments: arguments }); };
-    request.head.sync = request.headSync = function() { return _func({ cmd: 'head', arguments: arguments }); };
-    request.post.sync = request.postSync = function() { return _func({ cmd: 'post', arguments: arguments }); };
-    request.put.sync = request.putSync = function() { return _func({ cmd: 'put', arguments: arguments }); };
-    request.patch.sync = request.patchSync = function() { return _func({ cmd: 'patch', arguments: arguments }); };
-    request.del.sync = request.delSync = function() { return _func({ cmd: 'delete', arguments: arguments }); };
+    if (!request.sync) request.sync = function() { return _func({ cmd: 'request', arguments: arguments }); };
+    if (!request.get.sync) request.get.sync = request.getSync = function() { return _func({ cmd: 'get', arguments: arguments }); };
+    if (!request.head.sync) request.head.sync = request.headSync = function() { return _func({ cmd: 'head', arguments: arguments }); };
+    if (!request.post.sync) request.post.sync = request.postSync = function() { return _func({ cmd: 'post', arguments: arguments }); };
+    if (!request.put.sync) request.put.sync = request.putSync = function() { return _func({ cmd: 'put', arguments: arguments }); };
+    if (!request.patch.sync) request.patch.sync = request.patchSync = function() { return _func({ cmd: 'patch', arguments: arguments }); };
+    if (!request.del.sync) request.del.sync = request.delSync = function() { return _func({ cmd: 'delete', arguments: arguments }); };
 
     return request;
 };
