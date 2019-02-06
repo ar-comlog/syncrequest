@@ -1,4 +1,6 @@
 var _fs = require('fs');
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+process.env.NODE_NO_WARNINGS = 1;
 
 var _responce = function functionName(error, response, body) {
     console.info(JSON.stringify({error: error, response: response, body: body}));

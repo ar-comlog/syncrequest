@@ -34,7 +34,7 @@ module.exports = function (request) {
             }
         }
 
-        var args = [__dirname + '/sync.js', JSON.stringify(options)];
+        var args = ['--no-warnings', __dirname + '/sync.js', JSON.stringify(options)];
         var proc = spawnSync(process.argv[0], args, {encoding: 'utf8'});
         var res = JSON.parse(proc.stdout);
 
