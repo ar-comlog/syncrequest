@@ -34,11 +34,17 @@ module.exports = function (request) {
             }
         }
 
-        var args = ['--no-warnings', __dirname + '/sync.js', JSON.stringify(options)];
+        var args = [__dirname + '/sync.js', JSON.stringify(options)];
         var proc = spawnSync(process.argv[0], args, {encoding: 'utf8'});
-        var res = JSON.parse(proc.stdout);
+        try {
+            var res = JSON.parse(proc.stdout);
+            if (proc.stderr) delete proc.stderr;
+        } catch (e) {
+            if (!proc.stderr) proc.stderr = '';
+            proc.stderr += (e.stack || e.message)+"\n";
+            res.error = new Error(proc.stderr);
+        }
 
-        if (proc.stderr.length > 0) res.error = new Error(proc.stderr);
         return res;
     };
 
